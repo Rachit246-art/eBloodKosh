@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Donor Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b30000;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">eBloodKosh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="/request_blood">Request</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin_login">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Registration Form -->
+<div class="container mt-5">
+    <h2 class="mb-4 text-center text-danger">Register as a Blood Donor</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" class="border p-4 shadow rounded bg-light">
+        <div class="row mb-3">
+            <div class="col"><input name="name" class="form-control" placeholder="Full Name" required></div>
+            <div class="col"><input type="number" name="age" class="form-control" placeholder="Age" min="18" max="65" required></div>
+        </div>
+        <div class="mb-3">
+            <select name="blood_group" class="form-select" required>
+                <option value="">Select Blood Group</option>
+                <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+        </div>
+        <div class="row mb-3">
+            <div class="col"><input name="phone" class="form-control" placeholder="Phone Number" required></div>
+            <div class="col"><input name="email" type="email" class="form-control" placeholder="Email Address" required></div>
+        </div>
+        <div class="mb-3"><input name="city" class="form-control" placeholder="City" required></div>
+        <button class="btn btn-danger w-100">Register</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

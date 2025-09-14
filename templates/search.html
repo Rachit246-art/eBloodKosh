@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Search Blood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #b30000;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">eBloodKosh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="/request_blood">Request</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin_login">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Search Form -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Find a Blood Donor</h2>
+
+    <form method="POST" class="mb-4 bg-light p-4 shadow rounded">
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <select name="blood_group" class="form-select" required>
+                    <option value="">Select Blood Group</option>
+                    <option>A+</option><option>A-</option>
+                    <option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option>
+                    <option>O+</option><option>O-</option>
+                </select>
+            </div>
+            <div class="col-md-5 mb-3">
+                <input type="text" name="city" class="form-control" placeholder="Enter City" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <button class="btn btn-primary w-100">Search</button>
+            </div>
+        </div>
+    </form>
+
+    {% if results %}
+    <h5 class="text-success mb-3">Donors Found:</h5>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow">
+            <thead class="table-danger">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Group</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for donor in results %}
+                <tr>
+                    <td>{{ donor[1] }}</td>
+                    <td>{{ donor[2] }}</td>
+                    <td>{{ donor[3] }}</td>
+                    <td>{{ donor[4] }}</td>
+                    <td>{{ donor[6] }}</td>
+                    <td>{{ donor[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

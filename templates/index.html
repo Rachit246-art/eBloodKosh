@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>eBloodKosh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #b30000;
+    }
+
+    .navbar-brand, .nav-link {
+      color: white !important;
+      font-weight: bold;
+    }
+
+    .hero-section {
+      background-image: url("https://eraktkosh.in/portal/assets/banner1.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-section h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .cards {
+      margin-top: 50px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+
+    .importance-section, .faq-section, .contact-section {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .importance-section img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .faq-section h2, .contact-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">eBloodKosh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="/request_blood">Request</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin_login">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <div class="hero-section">
+    <div class="container text-center">
+      <h1>Donate Blood, Save Lives</h1>
+    </div>
+  </div>
+
+  <!-- Main Action Cards -->
+  <div class="container cards text-center">
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <div class="card border-danger">
+          <div class="card-body">
+            <h5 class="card-title">Donor Registration</h5>
+            <p class="card-text">Become a lifesaver by donating blood.</p>
+            <a href="/register" class="btn btn-danger">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card border-primary">
+          <div class="card-body">
+            <h5 class="card-title">Search Donors</h5>
+            <p class="card-text">Find available donors in your city.</p>
+            <a href="/search" class="btn btn-primary">Search</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card border-warning">
+          <div class="card-body">
+            <h5 class="card-title">Request Blood</h5>
+            <p class="card-text">Request urgently required blood units.</p>
+            <a href="/request_blood" class="btn btn-warning">Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card border-dark">
+          <div class="card-body">
+            <h5 class="card-title">Admin Panel</h5>
+            <p class="card-text">Manage blood requests and donors.</p>
+            <a href="/admin_login" class="btn btn-dark">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Need and Importance of Blood Donation Section -->
+  <div class="container importance-section">
+    <h2 class="text-center mb-4 text-danger">Need and Importance of Blood Donation</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p>
+          Blood is the most precious gift that anyone can give to another person — the gift of life. 
+          Every year, millions of lives are saved thanks to voluntary blood donations. 
+          Donated blood is used in medical emergencies, surgeries, childbirth, cancer treatment, and chronic illnesses.
+        </p>
+        <p>
+          Regular blood donation helps maintain a safe and adequate blood supply for hospitals. 
+          It also promotes health awareness and strengthens the community by supporting those in urgent need.
+        </p>
+      </div>
+      <!-- <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1588776814546-026a7a182db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" 
+             alt="Blood Donation">
+      </div> -->
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container faq-section">
+    <h2 class="text-center text-primary">Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-item">
+      <h5>1. Who can donate blood?</h5>
+      <p>Anyone between 18-65 years of age, in good health, and meeting the basic eligibility criteria can donate blood.</p>
+    </div>
+    <div class="faq-item">
+      <h5>2. How often can I donate blood?</h5>
+      <p>Whole blood can typically be donated every 3 months. Platelet and plasma donations may have different intervals.</p>
+    </div>
+    <div class="faq-item">
+      <h5>3. Is blood donation safe?</h5>
+      <p>Yes. Blood donation is safe and sterile. All equipment is single-use and discarded after donation.</p>
+    </div>
+    <div class="faq-item">
+      <h5>4. What should I do before donating blood?</h5>
+      <p>Eat a healthy meal, stay hydrated, and avoid alcohol before donation. Bring a valid ID with you.</p>
+    </div>
+    <div class="faq-item">
+      <h5>5. How is donated blood used?</h5>
+      <p>Donated blood is used in emergencies, surgeries, cancer treatment, chronic illness management, and more.</p>
+    </div>
+  </div>
+
+  <!-- Contact / For Any Query Section -->
+  <div class="container contact-section">
+    <h2 class="text-center text-success mb-4">Have Any Questions? Contact Us!</h2>
+    <form method="POST" action="/query" class="p-4 shadow bg-light rounded">
+      <div class="row mb-3">
+        <div class="col-md-6 mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <textarea name="message" class="form-control" rows="4" placeholder="Your Query" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
