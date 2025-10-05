@@ -56,7 +56,6 @@ def init_db():
         conn.commit()
 
 # -------------------- ROUTES --------------------
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -159,4 +158,6 @@ def admin_dashboard():
 # -------------------- MAIN --------------------
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)  # Local Dev Mode
+else:
+    init_db()  # Ensure DB is initialized when deployed on Render
